@@ -149,11 +149,13 @@ curl -X PUT http://localhost:8000/api/v1/services/{id}/ \
 ```
 
 ### Deletig a Service
+
 ```bash
 curl -X DELETE http://localhost:8000/api/v1/services/{id}/
 ```
 
 ### Listing All Services for a Specific Medspa
+
 ```bash
 curl http://localhost:8000/api/v1/services/?medspa={medspa_id}
 ```
@@ -171,17 +173,18 @@ curl -X POST http://localhost:8000/api/v1/appointments/ \
   }'
 ```
 
-### Updating an Appointment
+### Updating an Appointment's Status
+
 ```bash
 curl -X PATCH http://localhost:8000/api/v1/appointments/{appointment_id}/ \
   -H "Content-Type: application/json" \
   -d '{
-    "status": "completed",
-    "services": [{service_id1}, {service_id2}]
+    "status": "completed"
   }'
 ```
 
 ### Listing All Appointments
+
 ```bash
 curl http://localhost:8000/api/v1/appointments/
 ```
