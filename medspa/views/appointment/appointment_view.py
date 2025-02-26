@@ -11,12 +11,10 @@ class AppointmentViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         queryset = Appointment.objects.all()
 
-        # Filter by status if provided
         status = self.request.query_params.get("status", None)
         if status:
             queryset = queryset.filter(status=status)
 
-        # Filter by date if provided
         date = self.request.query_params.get("date", None)
         if date:
             try:

@@ -10,7 +10,6 @@ class Command(BaseCommand):
     help = "Load initial service data"
 
     def handle(self, *args, **kwargs):
-        # Create service categories
         categories = {
             "Injectables": {
                 "types": {
@@ -52,7 +51,6 @@ class Command(BaseCommand):
             },
         }
 
-        # Create suppliers first
         suppliers = {}
         supplier_names = ["Allergan", "Revance", "Merz", "Galderma"]
         for supplier_name in supplier_names:
@@ -61,7 +59,6 @@ class Command(BaseCommand):
             if created:
                 self.stdout.write(f"Created supplier: {supplier_name}")
 
-        # Create categories, types, and products
         for category_name, category_data in categories.items():
             category, created = ServiceCategory.objects.get_or_create(
                 name=category_name

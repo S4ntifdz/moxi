@@ -1,7 +1,6 @@
 from django.contrib import admin
 from medspa.models.appointment import Appointment
 
-
 @admin.register(Appointment)
 class AppointmentAdmin(admin.ModelAdmin):
     list_display = (

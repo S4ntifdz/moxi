@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib import admin
 from medspa.models.service import Service
+
 @admin.register(Service)
 class ServiceAdmin(admin.ModelAdmin):
     list_display = ("name", "medspa", "get_products", "price", "duration")
