@@ -86,6 +86,38 @@ python manage.py runserver
 
 ## Example API Usage
 
+### Creating a Medspa
+
+```bash
+curl -X POST http://localhost:8000/api/v1/medspas/ \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "Luxury Medspa",
+    "address": "123 Main St, City, Country",
+    "phone_number": "+1234567890",
+    "email": "contact@luxurymedspa.com"
+  }'
+```
+
+### Updating a Medspa
+
+```bash
+curl -X PUT http://localhost:8000/api/v1/medspas/{id}/ \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "Luxury Medspa Updated",
+    "address": "456 New St, City, Country",
+    "phone_number": "+1234567891",
+    "email": "newcontact@luxurymedspa.com"
+  }'
+```
+
+### Deleting a Medspa
+
+```bash
+curl -X DELETE http://localhost:8000/api/v1/medspas/{id}/
+```
+
 ### Creating a Service
 
 ```bash
@@ -97,9 +129,30 @@ curl -X POST http://localhost:8000/api/v1/services/ \
     "price": "399.99",
     "duration": 30,
     "medspa": 1,
-    "product": 1
+    "product": [1]  
   }'
 ```
+
+### Updating a Service
+
+```bash
+curl -X PUT http://localhost:8000/api/v1/services/{id}/ \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "Updated Botox Treatment",
+    "description": "Updated description for Botox",
+    "price": "449.99",
+    "duration": 45,
+    "medspa": 1,
+    "product": [1]
+  }'
+```
+
+### Deletig a Service
+```bash
+curl -X DELETE http://localhost:8000/api/v1/services/{id}/
+```
+
 
 ### Creating an Appointment
 
