@@ -1,7 +1,5 @@
 from rest_framework import serializers
-
 from medspa.models.appointment import Appointment
-
 
 class AppointmentSerializer(serializers.ModelSerializer):
     total_duration = serializers.IntegerField(read_only=True)
@@ -22,7 +20,9 @@ class AppointmentSerializer(serializers.ModelSerializer):
         ]
 
     def validate(self, data):
-        if "services" not in data:
+        if self.instance and 'status' in data and 'services' not in data:
+            return data
+        if 'services' not in data:
             raise serializers.ValidationError(
                 "Services must be specified for the appointment"
             )
