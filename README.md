@@ -53,35 +53,35 @@ python manage.py runserver
 ## API Endpoints
 
 ### Medspas
-- `GET /api/medspas/` - List all medspas
-- `POST /api/medspas/` - Create a new medspa
-- `GET /api/medspas/{id}/` - Retrieve a specific medspa
-- `PUT /api/medspas/{id}/` - Update a medspa
-- `DELETE /api/medspas/{id}/` - Delete a medspa
+- `GET /api/v1/medspas/` - List all medspas
+- `POST /api/v1/medspas/` - Create a new medspa
+- `GET /api/v1/medspas/{id}/` - Retrieve a specific medspa
+- `PUT /api/v1/medspas/{id}/` - Update a medspa
+- `DELETE /api/v1/medspas/{id}/` - Delete a medspa
 
 ### Services
-- `GET /api/services/` - List all services
-- `POST /api/services/` - Create a new service
-- `GET /api/services/{id}/` - Retrieve a specific service
-- `PUT /api/services/{id}/` - Update a service
-- `DELETE /api/services/{id}/` - Delete a service
+- `GET /api/v1/services/` - List all services
+- `POST /api/v1/services/` - Create a new service
+- `GET /api/v1/services/{id}/` - Retrieve a specific service
+- `PUT /api/v1/services/{id}/` - Update a service
+- `DELETE /api/v1/services/{id}/` - Delete a service
 - Query parameters:
   - `medspa` - Filter services by medspa ID
   - `search` - Search services by name or description
 
 ### Appointments
-- `GET /api/appointments/` - List all appointments
-- `POST /api/appointments/` - Create a new appointment
-- `GET /api/appointments/{id}/` - Retrieve a specific appointment
-- `PUT /api/appointments/{id}/` - Update an appointment
-- `DELETE /api/appointments/{id}/` - Delete an appointment
+- `GET /api/v1/appointments/` - List all appointments
+- `POST /api/v1/appointments/` - Create a new appointment
+- `GET /api/v1/appointments/{id}/` - Retrieve a specific appointment
+- `PUT /api/v1/appointments/{id}/` - Update an appointment
+- `DELETE /api/v1/appointments/{id}/` - Delete an appointment
 - Query parameters:
   - `status` - Filter by appointment status (scheduled/completed/canceled)
   - `date` - Filter by date (YYYY-MM-DD)
 
 ### Service Categories
-- `GET /api/categories/` - List all service categories
-- `POST /api/categories/` - Create a new category
+- `GET /api/v1/categories/` - List all service categories
+- `POST /api/v1/categories/` - Create a new category
 - Similar endpoints for types, products, and suppliers
 
 ## Example API Usage
