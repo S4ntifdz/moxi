@@ -153,6 +153,10 @@ curl -X PUT http://localhost:8000/api/v1/services/{id}/ \
 curl -X DELETE http://localhost:8000/api/v1/services/{id}/
 ```
 
+### Listing All Services for a Specific Medspa
+```bash
+curl http://localhost:8000/api/v1/services/?medspa={medspa_id}
+```
 
 ### Creating an Appointment
 
@@ -167,12 +171,30 @@ curl -X POST http://localhost:8000/api/v1/appointments/ \
   }'
 ```
 
-### Filtering Appointments
+### Updating an Appointment's Status
+```bash
+curl -X PATCH http://localhost:8000/api/v1/appointments/{appointment_id}/ \
+  -H "Content-Type: application/json" \
+  -d '{
+    "status": "completed",
+    "services": [{service_id1}, {service_id2}]
+  }'
+```
+
+### Listing All Appointments
+```bash
+curl http://localhost:8000/api/v1/appointments/
+```
+
+### Filtering Appointments by Status
 
 ```bash
 # Get all completed appointments
 curl http://localhost:8000/api/v1/appointments/?status=completed
+```
+### Filtering Appointments by Date
 
+```bash
 # Get appointments for a specific date
 curl http://localhost:8000/api/v1/appointments/?date=2024-03-01
 ```
