@@ -171,7 +171,7 @@ curl -X POST http://localhost:8000/api/v1/appointments/ \
   }'
 ```
 
-### Updating an Appointment's Status
+### Updating an Appointment
 ```bash
 curl -X PATCH http://localhost:8000/api/v1/appointments/{appointment_id}/ \
   -H "Content-Type: application/json" \
