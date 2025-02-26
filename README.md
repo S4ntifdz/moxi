@@ -89,7 +89,7 @@ python manage.py runserver
 ### Creating a Service
 
 ```bash
-curl -X POST http://localhost:8000/api/services/ \
+curl -X POST http://localhost:8000/api/v1/services/ \
   -H "Content-Type: application/json" \
   -d '{
     "name": "Botox Treatment",
@@ -104,7 +104,7 @@ curl -X POST http://localhost:8000/api/services/ \
 ### Creating an Appointment
 
 ```bash
-curl -X POST http://localhost:8000/api/appointments/ \
+curl -X POST http://localhost:8000/api/v1/appointments/ \
   -H "Content-Type: application/json" \
   -d '{
     "medspa": 1,
@@ -118,8 +118,8 @@ curl -X POST http://localhost:8000/api/appointments/ \
 
 ```bash
 # Get all completed appointments
-curl http://localhost:8000/api/appointments/?status=completed
+curl http://localhost:8000/api/v1/appointments/?status=completed
 
 # Get appointments for a specific date
-curl http://localhost:8000/api/appointments/?date=2024-03-01
+curl http://localhost:8000/api/v1/appointments/?date=2024-03-01
 ```
